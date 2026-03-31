@@ -1,0 +1,53 @@
+:root{
+	--bg-start: #f1f7fb;
+	--bg-end: #e6f0f8;
+	--primary: #0b5977;
+	--card: #ffffff;
+	--muted: #6b7280;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+	margin:0;
+	font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+	background: linear-gradient(180deg,var(--bg-start),var(--bg-end));
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+}
+
+.login-page{width:100%;max-width:420px;padding:24px}
+.card{
+	background:var(--card);
+	border-radius:12px;
+	padding:28px;
+	box-shadow:0 10px 30px rgba(11,89,119,0.08);
+}
+.logo{margin:0;font-size:22px;color:var(--primary);text-align:center}
+.lead{color:var(--muted);text-align:center;margin:8px 0 18px}
+
+.login-form label{display:block;font-size:13px;color:#333;margin-top:10px;margin-bottom:6px}
+.login-form input{
+	width:100%;padding:10px 12px;border:1px solid #e6edf3;border-radius:8px;background:#fff;font-size:15px;
+}
+.login-form input:focus{outline:none;box-shadow:0 0 0 3px rgba(11,89,119,0.08);border-color:var(--primary)}
+
+.options{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+.remember{font-size:13px;color:var(--muted)}
+.forgot{font-size:13px;color:var(--primary);text-decoration:none}
+.forgot:hover{text-decoration:underline}
+
+.btn{width:100%;margin-top:16px;padding:12px;border:0;border-radius:8px;background:var(--primary);color:#fff;font-weight:600;cursor:pointer}
+.btn:active{transform:translateY(1px)}
+
+.signup{ text-align:center;margin-top:14px;font-size:14px;color:var(--muted)}
+.signup a{color:var(--primary);text-decoration:none}
+
+@media (max-width:420px){
+	.card{padding:20px;border-radius:10px}
+}
+
+label input{vertical-align:middle}
