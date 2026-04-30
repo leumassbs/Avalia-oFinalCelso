@@ -51,3 +51,73 @@ body{
 }	
 
 label input{vertical-align:middle}
+
+.lista-card {
+    margin-top: 20px;
+}
+
+.lista-card h2 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.paciente-item {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.paciente-item:last-child {
+    border-bottom: none;
+}
+
+.paciente-info strong {
+    display: block;
+    font-size: 15px;
+    color: #333;
+}
+
+.paciente-info p {
+    margin: 4px 0 0 0;
+    font-size: 13px;
+    color: #666;
+}
+
+.paciente-acoes {
+    display: flex;
+    gap: 8px;
+}
+
+.paciente-acoes button {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.btn-editar {
+    background-color: #ffc107;
+    color: #000;
+}
+
+.btn-editar:hover { background-color: #e0a800; }
+
+.btn-excluir {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.btn-excluir:hover { background-color: #c82333; }
+
+.btn-cancelar {
+    background-color: #6c757d;
+    margin-top: 10px;
+}
+
+.btn-cancelar:hover { background-color: #5a6268; }

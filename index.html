@@ -7,15 +7,15 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <style>
-        .card h1{font-size:18px;margin-bottom:6px}
-        #msg{color:green;margin-top:12px}
+        .card h1 { font-size: 18px; margin-bottom: 6px; }
+        #msg { color: green; margin-top: 12px; font-weight: bold; }
     </style>
 </head>
 <body>
     <div class="login-page">
         <main class="card">
-            <h1>Cadastro de Pacientes</h1>
-            <p class="lead">Se Cadastre Aqui</p>
+            <h1 id="formTitulo">Cadastro de Pacientes</h1>
+            <p class="lead">Preencha os dados abaixo</p>
 
             <form id="cadastroForm" class="login-form" action="#" novalidate>
                 <label for="nome">Nome completo</label>
@@ -27,11 +27,19 @@
                 <label for="email">E-mail</label>
                 <input id="email" name="email" type="email" placeholder="seu@exemplo.com" required>
 
-                <button type="submit" class="btn">Cadastrar</button>
+                <button type="submit" id="submitBtn" class="btn">Cadastrar</button>
+                <button type="button" id="cancelarBtn" class="btn btn-cancelar" style="display: none;">Cancelar Edição</button>
             </form>
 
             <p id="msg" class="signup" aria-live="polite"></p>
         </main>
+
+        <section class="card lista-card">
+            <h2>Pacientes Cadastrados</h2>
+            <div id="pacientesContainer">
+                <p>Carregando pacientes...</p>
+            </div>
+        </section>
     </div>
 
     <script src="script.js"></script>
