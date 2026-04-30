@@ -1,93 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Cadastro de Pacientes — Clínica Sucelso</title>
-	<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Pacientes — Clínica Sucelso</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-	<style>
-		.card h1{font-size:18px;margin-bottom:6px}
-		#msg{color:green;margin-top:12px}
-	</style>
+    <style>
+        .card h1{font-size:18px;margin-bottom:6px}
+        #msg{color:green;margin-top:12px}
+    </style>
 </head>
 <body>
-	<div class="login-page">
-		<main class="card">
-			<h1>Cadastro de Pacientes</h1>
-			<p class="lead">Formulário simples para registrar pacientes</p>
+    <div class="login-page">
+        <main class="card">
+            <h1>Cadastro de Pacientes</h1>
+            <p class="lead">Se Cadastre Aqui</p>
 
-			<form id="cadastroForm" class="login-form" action="#" novalidate>
-				<label for="nome">Nome completo</label>
-				<input id="nome" name="nome" type="text" placeholder="Nome completo" required>
+            <form id="cadastroForm" class="login-form" action="#" novalidate>
+                <label for="nome">Nome completo</label>
+                <input id="nome" name="nome" type="text" placeholder="Nome completo" required>
 
-				<label for="telefone">Telefone</label>
-				<input id="telefone" name="telefone" type="tel" placeholder="(00) 9XXXX-XXXX">
+                <label for="telefone">Telefone</label>
+                <input id="telefone" name="telefone" type="tel" placeholder="(00) 9XXXX-XXXX">
 
-				<label for="email">E-mail</label>
-				<input id="email" name="email" type="email" placeholder="seu@exemplo.com" required>
+                <label for="email">E-mail</label>
+                <input id="email" name="email" type="email" placeholder="seu@exemplo.com" required>
 
-				<button type="submit" class="btn">Cadastrar</button>
-			</form>
+                <button type="submit" class="btn">Cadastrar</button>
+            </form>
 
-			<p id="msg" class="signup" aria-live="polite"></p>
-		</main>
-	</div>
+            <p id="msg" class="signup" aria-live="polite"></p>
+        </main>
+    </div>
 
-	<script>
-		document.getElementById('cadastroForm').addEventListener('submit', function(e){
-			e.preventDefault();
-			const nome = document.getElementById('nome').value.trim();
-			const telefone = document.getElementById('telefone').value.trim();
-			const email = document.getElementById('email').value.trim();
-			if(!nome || !email){
-				alert('Nome e e-mail são obrigatórios.');
-				return;
-			}
-
-			const msg = document.getElementById('msg');
-			msg.textContent = 'Paciente cadastrado com sucesso.';
-			this.reset();
-		});
-	</script>
-    <script>
-  const { createClient } = supabase
-
-  const SUPABASE_URL = 'https://iepxtpkmhxnsbhudhxkq.supabase.co'
-  const SUPABASE_KEY = 'sb_publishable_fMieAbuMOB19cU4QAtCxbQ_H0foIs5l'
-
-  const db = createClient(SUPABASE_URL, SUPABASE_KEY)
-
-  // Teste de conexão
-  async function testarConexao() {
-    const { data, error } = await db.auth.getSession()
-    if (error) {
-      console.error('Erro na conexão:', error)
-    } else {
-      console.log('Supabase conectado com sucesso!', data)
-    }
-  }
-  testarConexao()
-
-  document.getElementById('cadastroForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    
-    const nome = document.getElementById('nome').value;
-    const celular = document.getElementById('telefone').value;
-    const email = document.getElementById('email').value;
-
-    // Comando para inserir no Supabase
-    const { data, error } = await db
-        .from('pacientes')
-        .insert([{ nome, celular, email }]);
-
-    if (error) {
-        alert('Erro ao salvar: ' + error.message);
-    } else {
-        document.getElementById('msg').textContent = 'Paciente salvo no banco com sucesso!';
-        this.reset();
-    }
-});
-</script>
+    <script src="script.js"></script>
 </body>
 </html>
