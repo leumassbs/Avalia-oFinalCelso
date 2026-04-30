@@ -48,6 +48,6 @@ body{
 
 @media (max-width:420px){
 	.card{padding:20px;border-radius:10px}
-}
+}	
 
 label input{vertical-align:middle}
